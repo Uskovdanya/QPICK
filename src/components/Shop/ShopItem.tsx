@@ -1,9 +1,5 @@
 import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
-import {
-  addItem,
-  getCurrentQuantityById,
-  likeItem,
-} from "../../state/cartSlice";
+import { addItem, getCurrentQuantityById } from "../../state/cartSlice";
 import Quantity from "../Cart/Quantity";
 
 interface Card {
@@ -39,22 +35,22 @@ function ShopItem({ card }: ShopItemProps) {
     dispatch(addItem(newItem));
   }
 
-  function handleLike() {
-    const likedItem = {
-      id: id,
-      img: img,
-      title: title,
-      price: price,
-      oldPrice: oldPrice,
-      rate: rate,
-      liked: liked,
-    };
-
-    dispatch(addLikeItem(likedItem));
-  }
+  function handleLike() {}
 
   return (
-    <li className="card__container flex h-[407px] w-[350px] flex-col items-center justify-between rounded-[30px] bg-white px-[21px] pb-[26px] shadow-shopCardShadow">
+    <li className="card__container relative flex h-[407px] w-[350px] flex-col items-center justify-between rounded-[30px] bg-white px-[21px] pb-[26px] shadow-shopCardShadow">
+      <svg
+        width="22"
+        height="20"
+        viewBox="0 0 22 20"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="active:fill-heartColor absolute right-5 top-5 h-[20px] w-[22px] cursor-pointer fill-accentColor2 hover:-translate-y-[2px] hover:fill-accentColor active:translate-y-0"
+        onClick={handleLike}
+      >
+        <path d="M11.0009 1.65429C13.5848 -0.627558 17.5777 -0.551821 20.0669 1.90098C22.5551 4.35487 22.6409 8.2629 20.3265 10.812L10.9987 20L1.67308 10.812C-0.641282 8.2629 -0.554383 4.34837 1.93267 1.90098C4.42412 -0.548575 8.40935 -0.630804 11.0009 1.65429Z" />
+      </svg>
+
       <img src={img} alt="photo" className="card__image mt-[15px] w-[220px]" />
       <div className="flex w-full flex-col">
         <div className="card__wrapper flex w-full items-center justify-between">

@@ -1,8 +1,13 @@
+import { Link } from "react-router-dom";
+
 function CheckoutButton() {
   return (
-    <div className="shadow-checkOutShadow absolute left-0 right-0 top-[55px] w-[348px] rounded-[20px] bg-logoColor py-[22px] pl-[15px] pr-[12px] text-[17px] font-semibold text-white">
+    <Link
+      className="absolute left-[1px] right-0 top-[55px] w-[349px] cursor-pointer rounded-[20px] bg-logoColor py-[22px] text-center text-[17px] font-semibold text-white shadow-checkOutShadow hover:-translate-y-[2px] active:translate-y-0"
+      to="/checkout"
+    >
       Перейти к оформлению
-    </div>
+    </Link>
   );
 }
 

@@ -23,6 +23,7 @@ export default {
         textFooterColor: "#000",
         textGray: "#aaa",
         trashColor: "#DF6464",
+        heartColor: "#FA0F0F",
       },
       boxShadow: {
         shopCardShadow: "0 0 20px 0 rgba(0, 0, 0, 0.1)",

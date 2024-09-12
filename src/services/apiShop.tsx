@@ -79,7 +79,7 @@ export async function getShoppingItems() {
       title: "Apple EarPods",
       price: 6527,
       rate: 4.7,
-      liked: false,
+      liked: true,
       wireless: true,
     },
   ];

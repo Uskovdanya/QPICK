@@ -7,6 +7,7 @@ import { shopLoader } from "./services/apiShop";
 import ShoppingCart from "./ui/ShoppingCart";
 import Error from "./ui/Error";
 import LikedShop from "./ui/LikedShop";
+import Checkout from "./ui/Checkout";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,7 @@ const router = createBrowserRouter([
         loader: shopLoader,
         errorElement: <Error />,
       },
+      { path: "/checkout", element: <Checkout /> },
       // bug добавить actions
     ],
   },

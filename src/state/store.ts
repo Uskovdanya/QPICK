@@ -1,9 +1,43 @@
 import { configureStore } from "@reduxjs/toolkit";
 import cartReducer from "./cartSlice";
 
+import storage from "redux-persist/lib/storage";
+
+import {
+  persistStore,
+  persistReducer,
+  FLUSH,
+  REHYDRATE,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+} from "redux-persist";
+
+const persistConfig = {
+  key: "root",
+  version: 1,
+  storage,
+};
+
+const persistedReducer = persistReducer(persistConfig, cartReducer);
+
+//export const store = configureStore({
+//  reducer: { cart: cartReducer },
+//});
 export const store = configureStore({
-  reducer: { cart: cartReducer },
+  reducer: {
+    cart: persistedReducer,
+  },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }),
 });
+
+export const persistor = persistStore(store);
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
 export type RootState = ReturnType<typeof store.getState>;
