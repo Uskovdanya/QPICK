@@ -1,13 +1,17 @@
 import LinkButton from "../../ui/LinkButton";
+import { Trans } from "react-i18next";
 
 function EmptyCart() {
   return (
     <div className="m-auto mt-[29px] flex flex-col items-center justify-center">
-      <LinkButton to="/">&larr; Вернуться к покупкам</LinkButton>
+      <LinkButton to="/">
+        &larr; <Trans i18nKey="backToMainPage">Вернуться к покупкам</Trans>
+      </LinkButton>
       <p className="mt-7 text-center font-semibold">
-        Ваша корзина пока пуста. <br />
-        Вы можете перейти в каталог
-        <br /> и выбрать интересующие вас товары.
+        <Trans i18nKey="emptyCartComponent">
+          Ваша корзина пока пуста. <br></br> Вы можете перейти в каталог
+          <br></br> и выбрать интересующие вас товары.
+        </Trans>
       </p>
 
       <svg

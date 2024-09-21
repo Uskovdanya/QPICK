@@ -6,7 +6,7 @@ function Header() {
   return (
     <header className="header__container flex items-center justify-between">
       <Logo />
-      <div className="header__navigation flex items-center justify-between pr-[25px]">
+      <div className="header__navigation flex items-center justify-between md:pr-[25px]">
         <LikeComponent />
         <CartComponent />
       </div>

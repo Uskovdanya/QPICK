@@ -9,7 +9,7 @@ function AppLayout() {
   const isLoading = navigation.state === "loading";
 
   return (
-    <div className="container bg-bgColor pl-[165px] pr-[140px]">
+    <div className="container justify-center bg-bgColor pl-6 pr-6 sm:pl-[50px] sm:pr-[50px] xl:pl-[165px] xl:pr-[140px]">
       <div className="grid h-screen grid-rows-[auto_1fr_auto]">
         <Header />
         {isLoading && <Loader />}

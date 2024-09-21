@@ -1,5 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import cartReducer from "./cartSlice";
+import likeReducer from "./likeSlice";
 
 import storage from "redux-persist/lib/storage";
 
@@ -15,19 +16,24 @@ import {
 } from "redux-persist";
 
 const persistConfig = {
-  key: "root",
+  key: "cart",
+  version: 1,
+  storage,
+};
+const likePersistConfig = {
+  key: "like",
   version: 1,
   storage,
 };
 
-const persistedReducer = persistReducer(persistConfig, cartReducer);
+const cartPersistedReducer = persistReducer(persistConfig, cartReducer);
 
-//export const store = configureStore({
-//  reducer: { cart: cartReducer },
-//});
+const likePersistedReducer = persistReducer(likePersistConfig, likeReducer);
+
 export const store = configureStore({
   reducer: {
-    cart: persistedReducer,
+    cart: cartPersistedReducer,
+    like: likePersistedReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

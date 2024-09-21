@@ -1,13 +1,12 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import AppLayout from "./ui/AppLayout";
-
-import "./Index.css";
 import Shop from "./ui/Shop";
 import { shopLoader } from "./services/apiShop";
 import ShoppingCart from "./ui/ShoppingCart";
 import Error from "./ui/Error";
 import LikedShop from "./ui/LikedShop";
 import Checkout from "./ui/Checkout";
+import "./Index.css";
 
 const router = createBrowserRouter([
   {
@@ -20,15 +19,25 @@ const router = createBrowserRouter([
         loader: shopLoader,
         errorElement: <Error />,
       },
-      { path: "/cart", element: <ShoppingCart />, errorElement: <Error /> },
+      {
+        path: "/cart",
+        element: <ShoppingCart />,
+        errorElement: <Error />,
+      },
       {
         path: "/liked",
         element: <LikedShop />,
         loader: shopLoader,
         errorElement: <Error />,
       },
-      { path: "/checkout", element: <Checkout /> },
-      // bug добавить actions
+      {
+        path: "/checkout",
+        element: <Checkout />,
+      },
+      {
+        path: "*",
+        element: <Error />,
+      },
     ],
   },
 ]);

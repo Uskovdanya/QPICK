@@ -2,6 +2,7 @@ import ShoppingTitle from "../components/Shop/ShoppingTitle";
 import ShopItem from "../components/Shop/ShopItem";
 
 import { useLoaderData } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 interface ShopItem {
   id: number;
@@ -12,29 +13,31 @@ interface ShopItem {
   rate: number;
   liked: boolean;
   wireless: boolean;
+  info: string;
 }
 
 function Shop() {
+  const { t } = useTranslation();
   const shop: ShopItem[] = useLoaderData() as ShopItem[];
 
   const wirelessHeadphones = shop.filter((item) => item.wireless === true);
   const headphones = shop.filter((item) => item.wireless === false);
 
   return (
-    <div className="pl-[17px]">
-      <ShoppingTitle text="Наушники" color="text-textTitle" />
-      <ul className="shop__container mb-[29px] mt-[28px] flex flex-wrap items-center justify-start gap-[30px]">
+    <>
+      <ShoppingTitle text={t("headphones")} color="text-textTitle" />
+      <ul className="shop__container mb-4 mt-4 flex flex-wrap items-center justify-center gap-5 sm:gap-[30px] lg:mb-[29px] lg:mt-[28px]">
         {headphones.map((card) => (
           <ShopItem key={card.id} card={card} />
         ))}
       </ul>
-      <ShoppingTitle text="Беспроводные наушники" color="text-textTitle" />
-      <ul className="shop__container mb-5 mt-[28px] flex flex-wrap items-center justify-start gap-[30px]">
+      <ShoppingTitle text={t("wirelessHeadphones")} color="text-textTitle" />
+      <ul className="shop__container mb-5 mt-4 flex flex-wrap items-center justify-center gap-5 sm:gap-[30px] lg:mb-[29px] lg:mt-[28px]">
         {wirelessHeadphones.map((card) => (
           <ShopItem key={card.id} card={card} />
         ))}
       </ul>
-    </div>
+    </>
   );
 }
 

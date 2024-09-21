@@ -1,7 +1,7 @@
 function Social() {
   return (
     <div className="social__container flex items-center justify-center gap-[18px]">
-      <a href="https://vk.com/QPICKshop">
+      <a href="https://vk.com/QPICKshop" target="_blank">
         <svg
           width="31"
           height="21"
@@ -16,7 +16,7 @@ function Social() {
           />
         </svg>
       </a>
-      <a href="https://telegram.me/YourUsername">
+      <a href="https://telegram.me/YourUsername" target="_blank">
         <svg
           width="31"
           height="31"

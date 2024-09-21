@@ -13,6 +13,9 @@ export default {
     },
     extend: {
       screen: "100dvh", // изменяем высоту экрана
+      screens: {
+        xxs: "480px", // min-width
+      },
       colors: {
         logoColor: "#101010",
         accentColor: "#ffa542",
@@ -24,6 +27,7 @@ export default {
         textGray: "#aaa",
         trashColor: "#DF6464",
         heartColor: "#FA0F0F",
+        modalColor: "rgba(0, 0, 0, 0.5)",
       },
       boxShadow: {
         shopCardShadow: "0 0 20px 0 rgba(0, 0, 0, 0.1)",

@@ -22,8 +22,8 @@ function CartItem({ cartItem }: CartItemProps) {
   const currentQuantity = useAppSelector(getCurrentQuantityById(itemId));
 
   return (
-    <div className="cart mt-2 h-[218px] w-[633px] rounded-[30px] bg-white pb-[15px] pl-[19px] pr-[28px] pt-[18px] shadow-shopCardShadow">
-      <div className="flex h-full items-center justify-between">
+    <div className="cart h-[218px] w-full rounded-[30px] bg-white pb-[15px] pl-[19px] pr-[28px] pt-[18px] shadow-shopCardShadow [&:not(:first-child)]:mt-2">
+      <div className="flex h-full w-full items-center justify-between">
         <div className="flex flex-col items-start">
           <div className="flex items-center gap-[24px]">
             <img
