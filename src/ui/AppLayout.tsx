@@ -10,7 +10,7 @@ function AppLayout() {
 
   return (
     <div className="container justify-center bg-bgColor pl-6 pr-6 sm:pl-[50px] sm:pr-[50px] xl:pl-[165px] xl:pr-[140px]">
-      <div className="grid">
+      <div className="grid min-h-screen grid-rows-[auto_1fr_auto]">
         <Header />
         {isLoading && <Loader />}
         <main className="main__container overflow-auto">
