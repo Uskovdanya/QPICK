@@ -20,7 +20,7 @@ const Modal: React.FC<ModalProps> = ({ isModalOpen, onClose, card }) => {
   }
   return (
     <section className="modal fixed bottom-0 left-0 right-0 top-0 z-10 flex items-center justify-center bg-modalColor">
-      <article className="modal__content relative flex w-[85%] flex-col items-center justify-center bg-white p-6 md:w-[50%] 2xl:w-[40%]">
+      <article className="modal__content relative flex h-[95%] w-[85%] flex-col items-center justify-start overflow-y-auto bg-white p-6 md:h-[75%] md:w-[70%] 2xl:w-[40%]">
         <p className="modal__title mb-2 text-[17px] font-semibold text-titleColor">
           {card.title}
         </p>
